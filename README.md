@@ -19,6 +19,10 @@ trucks, buses, long vehicles, various types of aircrafts and boats. The source i
 from public satellite imagery available in Google Earth and contain images of multiple
 locations from seven countries.
 
+## Few Dataset examples:
+![examples](Images/GT.jpg)
+
+
 # Data Annotations
 With each image, the annotation is available as text file. The annotation format can be
 described as (c, xi, yi, w, h), where c is the object class starting from 0, (xi, yi) are the center

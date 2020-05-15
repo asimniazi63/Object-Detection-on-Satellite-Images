@@ -138,10 +138,7 @@ LR Scheduler = cosine scheduler
 
 config file = `cfg/Yolov3.cfg`
 
-![Yolov3](Graphs/baseline/1.PNG)
-![Yolov3](Graphs/baseline/2.PNG)
-![Yolov3](Graphs/baseline/3.PNG)
-![Yolov3](Graphs/baseline/4.PNG)
+![Yolov3](Graphs/_results_yolov3.png)
 
 ## Graphs for improvement with SPP
 ## Training settings
@@ -158,10 +155,7 @@ LR Scheduler = cosine scheduler
 
 config file = `cfg/Yolov3-spp.cfg`
 
-![Yolov3](Graphs/EfficientNet(backbone)/1.PNG)
-![Yolov3](Graphs/EfficientNet(backbone)/2.PNG)
-![Yolov3](Graphs/EfficientNet(backbone)/3.PNG)
-![Yolov3](Graphs/EfficientNet(backbone)/4.PNG)
+![Yolov3-spp](Graphs/results_yolov3-spp.png)
 
 
 
