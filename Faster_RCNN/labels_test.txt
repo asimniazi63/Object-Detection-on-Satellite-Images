@@ -1,0 +1,4 @@
+Dataset/test/images/4537.jpg,927,322,1008,437,stairtruck
+Dataset/test/images/4537.jpg,252,233,324,359,stairtruck
+Dataset/test/images/4537.jpg,30,429,101,547,stairtruck
+Dataset/test/images/4650.jpg,714,339,910,464,truck
