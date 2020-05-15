@@ -1,7 +1,7 @@
 # Repository for Object Detection Satellite Imagery Multi-vehicles Dataset (SIMD)
  Repository contains RetinaNet,Yolov3 and Faster RCNN for multi object detection on satellite images dataset.
  
-# Detailed Readme Files availble here summary given below:
+# Detailed Readme Files availble here, summary given below:
 Further Details can be found here in repsective Readme Files,
 contains Preprocessing, performance graphs, visual results, network summaries etc. <br /><br />
 [RetinaNet](RetinaNet/)
