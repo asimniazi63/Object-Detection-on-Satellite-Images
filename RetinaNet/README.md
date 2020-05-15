@@ -62,6 +62,8 @@ RetinaNet (ResNet50) | 0.8442 | 0.6231
 RetinaNet (EfficientNetB7) | 0.6126 | [evaluation script error-see this issue](https://github.com/fizyr/keras-retinanet/issues/647)
 
 # Performance Graphs
+
+## Graphs for baseline (ResNet50)
 ## Training settings
 
 Image Size = 1024x768
@@ -70,14 +72,24 @@ Batch_size = 4
 
 iterations_per_epoch = 1000
 
+LR = 1e-5
 
-## Graphs for baseline (ResNet50)
 ![RetinaNet](Graphs/baseline/1.PNG)
 ![RetinaNet](Graphs/baseline/2.PNG)
 ![RetinaNet](Graphs/baseline/3.PNG)
 ![RetinaNet](Graphs/baseline/4.PNG)
 
 ## Graphs for improvement with EfficientNetB7 as Backbone
+## Training settings
+
+Image Size = 512
+
+Batch_size = 1
+
+iterations_per_epoch = 3000
+
+LR = 1e-5
+
 ![RetinaNet](Graphs/EfficientNet(backbone)/1.PNG)
 ![RetinaNet](Graphs/EfficientNet(backbone)/2.PNG)
 ![RetinaNet](Graphs/EfficientNet(backbone)/3.PNG)
