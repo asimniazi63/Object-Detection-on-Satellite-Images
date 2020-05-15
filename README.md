@@ -48,6 +48,6 @@ Faster-RCNN | 0.515 | 0.508
 
 # Further Details can be found here in repsective Readme Files:
 ## Contains Preprocessing, performance graphs, visual results, network summaries etc.
-![RetinaNet](RetinaNet/)
-![Yolov3](Yolov3/)
-![Faster RCNN](Faster_RCNN/)
+[RetinaNet](RetinaNet/)
+[Yolov3](Yolov3/)
+[Faster RCNN](Faster_RCNN/)
