@@ -87,73 +87,76 @@ Example dataset provided in `Dataset` folder
 
 # Network Summary
 ## Yolov3
+Summary availble here in txt file [link](Summary/Yolov3-keras-style.txt)
+## Yolov3 Spatial Pyramid Pooling
+Summary availble here in txt file [link](Summary/Yolov3-spp-keras-style.txt)
 
-![Faster RCNN](Summary/model_plot_retinaNet_resnet50.png)
-## Yolov3 (EfficientNetB7 backnone)
-![Faster RCNN](Summary/RetinaNet_model_plot_effNetB7_backbone.png)
 
-# Debug Annotations
-Check validity of annotations by running following commands:
-
-```
-!python3 keras_retinanet/bin/debug.py csv labels_train.csv sims_classes.csv  
-
-```
 
 # Training
-Form more details please refer to '*.ipynb` availble in current directory. <br />
-For training on custom dataset, a CSV file can be used to pass data. To train using CSV run:
+Form more details please refer to `Yolov3_baseline.ipynb` or 'Yolov3_SPP_improved.ipynb` availble in current directory. <br />
+For training on custom dataset, earlier created `data.txt` will be passed with following command:
+
 ```
-!python3 keras_retinanet/bin/train.py --batch-size 4 --epochs 50 --steps 1000 --tensorboard-dir '/content/drive/My Drive/SIMS_Dataset/baseline/runs/' 
---snapshot-path '/content/drive/My Drive/SIMS_Dataset/baseline/snapshot' --no-resize --weighted-average --compute-val-loss 
-csv labels_train.csv sims_classes.csv --val-annotations labels_valid.csv
+#start training
+!python3 train.py --batch 8 --epochs 60 --img-size 512 --data Dataset/sims.txt --cache-images --rec --cfg yolov3.cfg --name from_yolov3 --weights weights/yolov3.pt
 ```
 
 # Testing
-Convert Trained model to inference model by this command:
+Run command:
+
 ```
-!python3 keras_retinanet/bin/convert_model.py '/content/drive/My Drive/SIMS_Dataset/baseline/snapshot/resnet50_csv_20.h5' snapshots-inference/retinaNet_resnet50.h5
+python3 test.py --data Dataset/sims_test.txt --cfg yolov3.cfg --batch-size 8 --weights weights/last_from_yolov3.pt --save-json --img-size 512
 ```
-Form more details please refer to '*.ipynb` availble in current directory. <br />
-Run:
+
+For detections run:
 ```
-python3 keras_retinanet/bin/evaluate.py --save-path test_output csv labels_test.csv sims_classes.csv 'snapshots-inference/retinaNet_resnet50.h5'
+python3 detect.py --names Dataset/sims_classes.names --cfg yolov3.cfg --weights weights/best_from_yolov3.pt
 ```
 
 # Performance Measures
 Model | Validation mAP | Test mAP
 ------------ | ------------- | -------------
-Yolov3 (ResNet50) | 0.8442 | 0.6231
-Yolov3 (EfficientNetB7) | 0.6126 | [evaluation script error-see this issue](https://github.com/fizyr/keras-Yolov3/issues/647)
+Yolov3 | 0.608 | 0.634
+Yolov3-SPP | 0.653 | 0.679
+
 
 # Performance Graphs
 
-## Graphs for baseline (ResNet50)
+## Graphs for baseline (Yolov3)
 ## Training settings
 
-Image Size = 1024x768
+Image Size = 512
 
-Batch_size = 4
+Batch_size = 8
 
 iterations_per_epoch = 1000
 
-LR = 1e-5
+LR = 0.01 , final = 0.0005
+
+LR Scheduler = cosine scheduler
+
+config file = `cfg/Yolov3.cfg`
 
 ![Yolov3](Graphs/baseline/1.PNG)
 ![Yolov3](Graphs/baseline/2.PNG)
 ![Yolov3](Graphs/baseline/3.PNG)
 ![Yolov3](Graphs/baseline/4.PNG)
 
-## Graphs for improvement with EfficientNetB7 as Backbone
+## Graphs for improvement with SPP
 ## Training settings
 
 Image Size = 512
 
-Batch_size = 1
+Batch_size = 8
 
-iterations_per_epoch = 3000
+iterations_per_epoch = 1000
 
-LR = 1e-5
+LR = 0.01 , final = 0.0005
+
+LR Scheduler = cosine scheduler
+
+config file = `cfg/Yolov3-spp.cfg`
 
 ![Yolov3](Graphs/EfficientNet(backbone)/1.PNG)
 ![Yolov3](Graphs/EfficientNet(backbone)/2.PNG)
@@ -163,13 +166,47 @@ LR = 1e-5
 
 
 # Per Class Evaluation results
-## Validation set (ResNet50)
+## Test set - Yolov3
 ```
-
+ Class    Images   Targets         P         R   mAP@0.5        F1: 100% 94/94 [00:25<00:00,  3.76it/s]
+                 all       748  7.98e+03     0.549     0.697     0.634     0.581
+                 car       748  3.68e+03     0.768     0.836     0.834     0.801
+               truck       748       446     0.497      0.78     0.674     0.607
+                 van       748       874     0.499     0.747     0.626     0.598
+         longvehicle       748       222     0.395     0.856       0.6     0.541
+                 bus       748       366     0.733     0.847     0.823     0.786
+            airliner       748       161     0.696     0.981     0.962     0.815
+           propeller       748        25     0.254      0.92     0.689     0.398
+             trainer       748        49     0.533     0.863     0.782     0.659
+           chartered       748       103     0.677     0.854     0.838     0.755
+             fighter       748         8      0.53     0.625     0.657     0.574
+               other       748        85    0.0956     0.259    0.0944      0.14
+          stairtruck       748        83     0.395      0.47     0.328     0.429
+       pushbacktruck       748        55     0.255     0.145      0.13     0.185
+          helicopter       748         9         1     0.352      0.54      0.52
+                boat       748  1.82e+03     0.898     0.918     0.936     0.908
+Speed: 19.6/2.7/22.3 ms inference/NMS/total per 512x512 image at batch-size 8
 ```
-## Test set (ResNet50)
+## Test set (Yolov3-SPP)
 ```
-
+  Class    Images   Targets         P         R   mAP@0.5        F1: 100% 94/94 [00:17<00:00,  5.24it/s]
+                 all       748  7.98e+03     0.586     0.712     0.679     0.636
+                 car       748  3.68e+03     0.785     0.856     0.859     0.819
+               truck       748       446      0.57     0.767     0.727     0.654
+                 van       748       874     0.643     0.778     0.743     0.704
+         longvehicle       748       222     0.488     0.833     0.632     0.615
+                 bus       748       366     0.757     0.883     0.864     0.815
+            airliner       748       161     0.904     0.969     0.968     0.935
+           propeller       748        25     0.658      0.88     0.903     0.753
+             trainer       748        49     0.687      0.98     0.941     0.807
+           chartered       748       103     0.635     0.963     0.927     0.765
+             fighter       748         8      0.75      0.75     0.821      0.75
+               other       748        85    0.0909     0.235    0.0898     0.131
+          stairtruck       748        83      0.32     0.283      0.22       0.3
+       pushbacktruck       748        55      0.17     0.109     0.115     0.133
+          helicopter       748         9     0.437     0.432     0.421     0.434
+                boat       748  1.82e+03       0.9     0.955     0.952     0.927
+Speed: 9.1/2.6/11.8 ms inference/NMS/total per 512x512 image at batch-size 8
 ```
 
 
