@@ -205,9 +205,20 @@ Speed: 9.1/2.6/11.8 ms inference/NMS/total per 512x512 image at batch-size 8
 
 
 # Visual Results
-![Yolov3](images/1.png)
-![Yolov3](images/2.png)
-![Yolov3](images/3.png)
-![Yolov3](images/4.png)
-![Yolov3](images/5.png)
-![Yolov3](images/6.png)
+## Results for Yolov3
+![Yolov3](outputs/Yolov3/1.jpg)
+![Yolov3](outputs/Yolov3/2.jpg)
+![Yolov3](outputs/Yolov3/3.jpg)
+![Yolov3](outputs/Yolov3/4.jpg)
+![Yolov3](outputs/Yolov3/5.jpg)
+
+## Results for Yolov3-SPP
+![Yolov3](outputs/Yolov3-spp/1.jpg)
+![Yolov3](outputs/Yolov3-spp/2.jpg)
+![Yolov3](outputs/Yolov3-spp/3.jpg)
+![Yolov3](outputs/Yolov3-spp/4.jpg)
+![Yolov3](outputs/Yolov3-spp/5.jpg)
+![Yolov3](outputs/Yolov3-spp/6.jpg)
+![Yolov3](outputs/Yolov3-spp/7.jpg)
+![Yolov3](outputs/Yolov3-spp/8.jpg)
+![Yolov3](outputs/Yolov3-spp/9.jpg)
