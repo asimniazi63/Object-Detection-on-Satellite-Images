@@ -1,0 +1,3 @@
+Pre-trained Model available here for RetinaNet (Resnet50 and EffNetB7 as backbones)
+
+https://drive.google.com/drive/folders/19ZP9FbsQp_sNEmor4_cAxnim07Bv45RA?usp=sharing
