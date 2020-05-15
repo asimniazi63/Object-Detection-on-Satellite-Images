@@ -2,27 +2,92 @@
 
 # Pre-requistes
  - Colab
- - Keras and Tensorflow
- - Clone into https://github.com/fizyr/keras-Yolov3.git
- - Install requirements by `pip install .` and Build cython code `python setup.py build_ext --inplace`
+ - Pytorch >=1.5
+ - Clone into repository `https://github.com/ultralytics/yolov3`
+ - install `pip install -U -r requirements.txt`
+ 
  
 # Preprocessing
-In first step, separate images into train,valid and test directories. The dataset was provided in <b>Pascal voc </b> but was converted to custom format
-of `filepath,x1,y1,x2,y2,class_name`. Training requires annotation files in `.CSV` format. For step by step preprocessing please refer to 
-`Preprocessing/RetinaNet_preprocessing.ipynb` <br />
-
-Example dataset provided in `Dataset` folder
-
-Create `classes.csv` in format:
+Created train, test and valid folder with correspondence to the training,test and valid`.txt` files.
 ```
-class_name,id
-car,0
-bus,1
+#separate images based on train,val and test and put corresponding files into 
+#respective folder having images and labels as subfolders in it
+def copy(filepath,dest_dir):
+    with open(filepath) as fp:
+        for line in fp:
+            os.makedirs(dest_dir, exist_ok=True)  # succeeds even if directory exists.
+            shutil.copy(line.replace('\n', ''), dest_dir+"images") #image
+            shutil.copy(line.replace('.jpg\n', '.txt'), dest_dir+"labels") ##label
+    print("Done: "+ filepath)
+            
+copy('./training.txt','yolo_train/')
+copy('./validation.txt','yolo_val/')
+copy('./test.txt','yolo_test/')
+```
+
+The images and annotations/labels should look like this:
+```
+Dataset/yolo_test/images/0000.jpg #image
+Dataset/yolo_test/label/0000.txt #label
+```
+Note: Each image's label should be locatable by replacing `/image/*.jpg` with `/label/*.txt`
+
+then created `.txt` for annotations with following code:
+
+```
+def copy(filepath,newfile,binder):
+    with open(filepath) as fp:
+      print(filepath)
+      for line in fp:
+        in_file = line[2:]
+        new = binder+in_file
+        with open(newfile, "a") as f:
+          f.write(new)
+
+copy('training.txt','Dataset/yolo_train/yolo_train.txt',
+     "/content/yolov3/Dataset/yolo_train/")
+
+copy('test.txt','Dataset/yolo_test/yolo_test.txt',
+     "/content/yolov3/Dataset/yolo_test/")
+
+copy('validation.txt','Dataset/yolo_val/yolo_val.txt',
+     "/content/yolov3/Dataset/yolo_val/")
+```
+
+Create `classes.names` file, Here we are using `Dataset/sims_classes.names`
+```
+car
+bus
+truck
+van
+longvehicle
 ...
 ```
 
+Create `sims.txt` for passing data for training. It should look like this:
+```
+classes=15
+train=/content/yolov3/Dataset/yolo_train/yolo_train.txt
+valid=/content/yolov3/Dataset/yolo_val/yolo_val.txt
+names=/content/yolov3/Dataset/sims_classes.names
+```
+For testing, create `sims_test.txt` and it should look like this:
+```
+classes=15
+valid=/content/yolov3/Dataset/yolo_test/yolo_test.txt
+names=/content/yolov3/Dataset/sims_classes.names
+```
+
+Update `*.cfg` in all yolov3 layers. Filters in these layers should be `filters=[5 + n] * 3` where n = number of classes
+
+
+
+
+Example dataset provided in `Dataset` folder
+
 # Network Summary
-## Yolov3 (ResNet50 backnone)
+## Yolov3
+
 ![Faster RCNN](Summary/model_plot_retinaNet_resnet50.png)
 ## Yolov3 (EfficientNetB7 backnone)
 ![Faster RCNN](Summary/RetinaNet_model_plot_effNetB7_backbone.png)
