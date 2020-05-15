@@ -29,13 +29,19 @@ Note: training config is used for testing the Model.
 # Performance Measures
 Model | Validation mAP | Test mAP
 ------------ | ------------- | -------------
-Faster-RCNN | 0.515 | 0.508
+RetinaNet (ResNet50) | 0.8442 | 0.6231
+RetinaNet (EfficientNetB7) | 0.6126 | [evaluation script error-see this issue](https://github.com/fizyr/keras-retinanet/issues/647)
 
 # Performance Graphs
 ## Training settings
 
 
-Image Size = 512
+Image Size = 1024x768
+
+Batch_size = 4
+
+iterations_per_epoch = 1000
+
 
 ## Graphs for baseline (ResNet50)
 ![RetinaNet](Graphs/baseline/1.PNG)
@@ -48,6 +54,29 @@ Image Size = 512
 ![RetinaNet](Graphs/EfficientNet(backbone)/2.PNG)
 ![RetinaNet](Graphs/EfficientNet(backbone)/3.PNG)
 ![RetinaNet](Graphs/EfficientNet(backbone)/4.PNG)
+
+
+# Per Class Evualtion results on test dataset
+```
+3678 instances of class car with average precision: 0.8669
+446 instances of class truck with average precision: 0.6585
+874 instances of class van with average precision: 0.7033
+222 instances of class longvehicle with average precision: 0.5817
+366 instances of class bus with average precision: 0.7277
+161 instances of class airliner with average precision: 0.9638
+25 instances of class propeller with average precision: 0.6700
+49 instances of class trainer with average precision: 0.8611
+103 instances of class chartered with average precision: 0.8428
+8 instances of class fighter with average precision: 0.8409
+85 instances of class other with average precision: 0.1591
+83 instances of class stairtruck with average precision: 0.2610
+55 instances of class pushbacktruck with average precision: 0.1585
+9 instances of class helicopter with average precision: 0.1115
+1820 instances of class boat with average precision: 0.9398
+Inference time for 747 images: 0.0855
+mAP using the weighted average of precisions among classes: 0.8211
+mAP: 0.6231
+```
 
 
 # Visual Results
