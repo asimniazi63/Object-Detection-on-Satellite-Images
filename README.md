@@ -38,7 +38,7 @@ This repository contains three different object detection model alongwith their 
 
 # Performance Measures
 Models | Validation mAP | Test mAP
------------- | -------------
+------------ | ------------- | -------------
 Yolov3 | 0.608 | 0.634
 Yolov3-SPP | 0.653 | 0.679
 RetinaNet (ResNet50) 0.8442 | 0.6231
