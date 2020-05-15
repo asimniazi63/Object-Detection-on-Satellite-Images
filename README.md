@@ -35,12 +35,19 @@ This repository contains three different object detection model alongwith their 
 ![Yolov3](Images/Yolov3.png)
 ## [Yolov3-SPP]
 ![Yolov3-SPP](Images/SPP.png)
+## [Yolov3](https://arxiv.org/pdf/1907.11093)
 
 # Performance Measures
 Models | Validation mAP | Test mAP
 ------------ | ------------- | -------------
 Yolov3 | 0.608 | 0.634
 Yolov3-SPP | 0.653 | 0.679
-RetinaNet (ResNet50) 0.8442 | 0.6231
+RetinaNet (ResNet50) | 0.8442 | 0.6231
 RetinaNet (EfficientNetB7) | 0.6126 | [evaluation script error-see this issue](https://github.com/fizyr/keras-retinanet/issues/647)
 Faster-RCNN | 0.515 | 0.508
+
+# Further Details can be found here in repsective Readme Files:
+## Contains Preprocessing, performance graphs, visual results, network summaries etc.
+![RetinaNet](RetinaNet/)
+![Yolov3](Yolov3/)
+![Faster RCNN](Faster_RCNN/)
