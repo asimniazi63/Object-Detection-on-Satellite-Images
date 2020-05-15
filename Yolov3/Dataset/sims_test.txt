@@ -1,0 +1,3 @@
+classes=15
+valid=/content/yolov3/Dataset/yolo_test/yolo_test.txt
+names=/content/yolov3/Dataset/sims_classes.names

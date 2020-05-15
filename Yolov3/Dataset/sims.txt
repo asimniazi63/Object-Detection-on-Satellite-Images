@@ -1,0 +1,4 @@
+classes=15
+train=/content/yolov3/Dataset/yolo_train/yolo_train.txt
+valid=/content/yolov3/Dataset/yolo_val/yolo_val.txt
+names=/content/yolov3/Dataset/sims_classes.names
