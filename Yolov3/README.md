@@ -230,5 +230,4 @@ Speed: 9.1/2.6/11.8 ms inference/NMS/total per 512x512 image at batch-size 8
 #### Bactch Prediction on Yolov3
 ![Yolov3](output/Yolov3/test_batch0_pred.jpg)
 #### Bactch Prediction on Yolov3-SPP
---![Yolov3](output/Yolov3-spp/test_batch0_gt.jpg)
 ![Yolov3](output/Yolov3-spp/test_batch0_pred.jpg)
