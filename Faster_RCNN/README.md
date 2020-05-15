@@ -30,11 +30,31 @@ Model | Validation mAP | Test mAP
 Faster-RCNN | 0.515 | 0.508
 
 # Performance Graphs
-![Faster-RCNN](Graphs/1.png)
-![Faster-RCNN](Graphs/2.png)
-![Faster-RCNN](Graphs/3.png)
+## Training settings
+Pretrained weights can be from `keras/application`
+
+Image Size = 512
+
+Number of RoIs at once = 4
+
+Data Augumentation: Horizontal flips, Vertical Flips, rotation 90 degree.
+
+RPN optimizer - Adam - Learning rate =1e-5
+Classification optimizer - Adam - Learning rate =1e-5
+Overall optimizer - SGD - Learning rate =1e-5
+
+Loss function = Mean Absolute Error (MAE)
+
+![Faster-RCNN](Graphs/1.PNG)
+![Faster-RCNN](Graphs/2.PNG)
+![Faster-RCNN](Graphs/3.PNG)
 
 # Visual Results
 ![Faster-RCNN](Outputs/1.png)
 ![Faster-RCNN](Outputs/2.png)
 ![Faster-RCNN](Outputs/3.png)
+![Faster-RCNN](Outputs/4.png)
+![Faster-RCNN](Outputs/5.png)
+![Faster-RCNN](Outputs/6.png)
+![Faster-RCNN](Outputs/7.png)
+![Faster-RCNN](Outputs/8.png)

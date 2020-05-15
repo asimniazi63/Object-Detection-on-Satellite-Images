@@ -4,7 +4,7 @@
 # Detailed Readme Files availble here summary given below:
 Further Details can be found here in repsective Readme Files,
 contains Preprocessing, performance graphs, visual results, network summaries etc. <br /><br />
-[RetinaNet](Retina	Net/)
+[RetinaNet](RetinaNet/)
 <br />
 [Yolov3](Yolov3/)
 <br />
