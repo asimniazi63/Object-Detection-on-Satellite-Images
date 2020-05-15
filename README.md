@@ -48,6 +48,15 @@ Faster-RCNN | 0.515 | 0.508
 
 # Further Details can be found here in repsective Readme Files:
 ## Contains Preprocessing, performance graphs, visual results, network summaries etc.
-[RetinaNet](RetinaNet/)
-[Yolov3](Yolov3/)
-[Faster RCNN](Faster_RCNN/)
+[RetinaNet&nbsp](RetinaNet/)
+[Yolov3&nbsp](Yolov3/)
+[Faster RCNN&nbsp](Faster_RCNN/)
+
+# Mainted by:
+Asim Hameed Khan
+Contact: https://www.linkedin.com/in/asimniazi63/
+
+# Acknowledgements
+https://github.com/RockyXu66/Faster_RCNN_for_Open_Images_Dataset_Keras/
+https://github.com/ultralytics/yolov3
+https://github.com/fizyr/keras-retinanet
