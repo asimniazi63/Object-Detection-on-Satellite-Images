@@ -1,5 +1,16 @@
 # Repository for Object Detection Satellite Imagery Multi-vehicles Dataset (SIMD)
  Repository contains RetinaNet,Yolov3 and Faster RCNN for multi object detection on satellite images dataset.
+ 
+# Summary available down below:
+Further Details can be found here in repsective Readme Files,
+contains Preprocessing, performance graphs, visual results, network summaries etc.
+[RetinaNet](RetinaNet/)
+<br />
+[Yolov3](Yolov3/)
+<br />
+[Faster RCNN](Faster_RCNN/)
+<br />
+
 
 # Dataset
 Satellite Imagery Multi-vehicles Dataset (SIMD). It comprises 5,000 images of resolution 1024
@@ -33,8 +44,8 @@ This repository contains three different object detection model alongwith their 
 ![RetinaNet](Images/RetinaNet.PNG)
 ## [Yolov3](https://arxiv.org/abs/1804.02767)
 ![Yolov3](Images/Yolov3.png)
-![Yolov3-SPP](Images/SPP.png)
 ## [Yolov3-SPP](https://arxiv.org/pdf/1907.11093)
+![Yolov3-SPP](Images/SPP.png)
 
 # Performance Measures
 Models | Validation mAP | Test mAP
@@ -45,14 +56,6 @@ RetinaNet (ResNet50) | 0.8442 | 0.6231
 RetinaNet (EfficientNetB7) | 0.6126 | [evaluation script error-see this issue](https://github.com/fizyr/keras-retinanet/issues/647)
 Faster-RCNN | 0.515 | 0.508
 
-# Further Details can be found here in repsective Readme Files:
-Contains Preprocessing, performance graphs, visual results, network summaries etc.
-[RetinaNet](RetinaNet/)
-<br />
-[Yolov3](Yolov3/)
-<br />
-[Faster RCNN](Faster_RCNN/)
-<br />
 	
 # Mainted by:
 Asim Hameed Khan <br />
