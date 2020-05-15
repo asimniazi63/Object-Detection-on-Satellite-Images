@@ -60,6 +60,8 @@ RetinaNet (ResNet50) | 0.8442 | 0.6231
 RetinaNet (EfficientNetB7) | 0.6126 | [evaluation script error-see this issue](https://github.com/fizyr/keras-retinanet/issues/647)
 Faster-RCNN | 0.515 | 0.508
 
+# Pre-Trained Models
+Pre-trained models can be downloaded from `*/Model/link.txt` in respective folder.
 	
 # Mainted by:
 Asim Hameed Khan <br />

@@ -97,6 +97,11 @@ Summary availble here in txt file [link](Summary/Yolov3-spp-keras-style.txt)
 Form more details please refer to `Yolov3_baseline.ipynb` or 'Yolov3_SPP_improved.ipynb` availble in current directory. <br />
 For training on custom dataset, earlier created `data.txt` will be passed with following command:
 
+Pre-Trained weights can be download for transfer learning by:
+```
+!. weights/download_yolov3_weights.sh
+```
+
 ```
 #start training
 !python3 train.py --batch 8 --epochs 60 --img-size 512 --data Dataset/sims.txt --cache-images --rec --cfg yolov3.cfg --name from_yolov3 --weights weights/yolov3.pt
