@@ -29,7 +29,7 @@ actual image.
 
 This repository contains three different object detection model alongwith their improvements:
  - Yolov3
- - Yolov3-SPP (Spatial Pyramid Pooling)
+ - introduced SPP (Spatial Pyramid Pooling) module to SPP
  - RetinaNet
 	- (1) supports ResNet50 backbone
 	- (2) supports EfficientNetB7 backbone
