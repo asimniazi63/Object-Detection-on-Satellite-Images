@@ -3,8 +3,8 @@
  
 # Detailed Readme Files availble here summary given below:
 Further Details can be found here in repsective Readme Files,
-contains Preprocessing, performance graphs, visual results, network summaries etc. <br />
-[RetinaNet](RetinaNet/)
+contains Preprocessing, performance graphs, visual results, network summaries etc. <br /><br />
+[RetinaNet](Retina	Net/)
 <br />
 [Yolov3](Yolov3/)
 <br />
@@ -29,7 +29,7 @@ actual image.
 
 This repository contains three different object detection model alongwith their improvements:
  - Yolov3
- - introduced SPP (Spatial Pyramid Pooling) module to SPP
+ - introduced SPP (Spatial Pyramid Pooling) module to Yolov3
  - RetinaNet
 	- (1) supports ResNet50 backbone
 	- (2) supports EfficientNetB7 backbone
